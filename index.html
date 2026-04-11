@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellapp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+        <link rel="icon" type="image/png" href="./img/burger_hero.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dishes.css">
+    <link rel="stylesheet" href="dialog.css">
+    <script src="./resp_menu_script.js" defer></script>
+    <script src="./render_content.js" defer></script>
+    <script src="./render_dishes.js" defer></script>
+</head>
+
+<body onload="init()">
+    <div class="header_container">
+        <header class="header">
+            <div class="logo">
+                <img src="./img/logo.svg" alt="Logo">
+                <img src="./img/bestellapp.svg" alt="Bestellapp">
+            </div>
+       <button onclick="toggleOrderbox()" class="background_menu">
+    <img src="./img/menu.svg" alt="Bestellübersicht">
+</button>
+        </header>
+        <div class="hero_container">
+            <img src="./img/hero.png" alt="Burger" class="hero">
+            <img src="./img/burger_hero.png" alt="Burger" class="burger_hero">
+        </div>
+       <div id="order_box" class="basket_sidebar close_box">
+    <div class="basket_header">
+        <h2>Ihre Bestellung🍕</h2>
+        <button onclick="closeBasket()">✕</button>
+    </div>
+    <div id="basket_items"></div>
+    <div class="basket_footer">
+        <div class="basket_subtotal">
+            <p>Kosten</p>
+            <p id="subtotal_price">0,00 €</p>
+        </div>
+        <div class="basket_subtotal">
+           <p id="delivery_price">Lieferung 4,99 €</p>
+           
+        </div>
+        <p class="info_color">Hinweis: ab einen Einkauf von 35€ entfallen die Lieferkosten </p>
+        <hr>
+        <div class="basket_total">
+            <p>Total</p>
+            <p id="total_price">0€</p>
+        </div>
+        <button onclick="deliveryFinished()" class="buy_now_btn" id="buy_now_btn">Buy now</button>
+    </div>
+</div>
+    </div>
+  <dialog class="dialog_order" id="dialog_deliver">
+    <div class="dialog_content">
+        <img src="./img/deliver_car.svg" alt="Deliver_Car">
+        <p>Ihre Bestellung wurde erfolgreich aufgegeben und wird in Kürze geliefert.</p>
+        <button class="btn_deliver" onclick="closeDialogAndReset()">OK</button>
+    </div>
+</dialog>
+    <div class="hero_text">
+        <div class="hero_Burger">
+            <h1>Burger <span class="h1_color">House</span></h1>
+            <div class="like_hero">
+                <span id="hero-like-btn" class="star" onclick="likeHero()">★</span>
+                <p>4,1</p>
+                <span id="hero-like-count">(<span id="hero-like-number">317</span>)</span>
+            </div>
+        </div>
+        <p class="p_hero">The best Burger,Pizza and Greens,all in one great place. </p>
+    </div>
+    <div class="nav_dishes">
+    <a href="#dish1">Burger</a>
+    <a href="#dish2">Pizza</a>
+    <a href="#dish3">Salad</a>
+</div>
+    <section id="dish1">
+    </section>
+    <section id="dish2">
+    </section>
+      <section id="dish3">
+    </section>
+    
+    <button class="warenkorb" onclick="toggleOrderbox()">
+<img src="./img/deliver_car.svg" alt="Bestekllung">
+    </button>
+
+    <footer>
+        <p>&copy; 2023 Burger House. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

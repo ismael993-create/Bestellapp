@@ -1,0 +1,217 @@
+.dish {
+    width: 100%;
+    height: 260px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 40px;
+
+}
+.dish_content img {
+    padding: 12px;
+}
+
+.media_query_dish_info { display: flex;
+    align-items: end;}
+
+.dish_info {
+    width: 100%;
+    height: 60px;
+    object-fit: cover;
+    background-color: #E76C1F;
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    padding-left: 15%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.dish_description {
+    font-size: 18px;
+    color: white;
+    font-size: 40px;
+    font-family: "Palanquin Dark", sans-serif;
+    padding-left: 15px;
+}
+
+.dish_content {
+    width: 700px;
+    height: 140px;
+    background-color: #FDEADC;
+    border-radius: 12px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 13%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.dish_content_meal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 0;
+    width: 100%;
+    height: 145px; 
+    padding: 12px 12px 15px 12px;
+}
+
+
+.dish_meal_description {
+    color: #575655;
+    width: 100%;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #575655;
+    font-family: "Palanquin Dark", sans-serif;
+    font-style: normal;
+}
+
+.dish_content_meal_title_price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.price_font {
+    font-size: 18px;
+}
+
+.dish_buy_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+}
+.dish_buy_button button {
+    background-color: #FFFFFF;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 5px 5px;
+    box-shadow: 0 0 0 0 rgba(231, 108, 31, 0);
+}
+
+.warenkorb {
+    bottom: 10px;
+    background-color: rgb(71 67 65 / 70%);
+    color: white;
+    border: none;
+    height: 80px;
+    font-size: 15px;
+    cursor: pointer;
+    position: fixed;
+    top: 89%;
+    border-radius: 50%;
+    left: 9px;
+    display: inline;
+    width: 80px;
+}
+
+@media (max-width: 820px) {
+
+    .dish_info {
+        padding-left: 0;
+        justify-content: center;
+        margin-top: 90px;
+        margin-bottom: 20px;
+    }
+
+    .dish_description {
+        font-size: 22px;
+    }
+    h1
+    {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 17px;
+        font-weight: 600;
+    }
+.dish_content {
+    width: 90%;  
+    height: auto;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #FDEADC;
+    border-radius: 12px;
+    padding: 0;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+ .dish_content img {
+    width: 100%;  
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 8px;
+}
+
+    .dish_content_meal {
+        width: 100%;
+        margin-top: 0;
+        padding: 8px 10px;
+    }
+
+    .dish_meal_description {
+        width: 100%;
+        font-size: 11px;
+    }
+
+    .dish_content_meal_title_price {
+        width: 100%;
+    }
+
+    .dish_buy_button {
+      padding: 0px;
+    }
+
+      .price_font {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+    .media_query_dish_info{
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+    flex-direction: column;
+}
+
+#dish1, #dish2, #dish3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.dialog_content {
+   width: 290px !important;
+}
+
+}
+
+@media (max-width: 1180px) {
+    .basket_sidebar {
+    width: 100% !important;
+    border-radius: 0px !important;
+   
+}
+
+    
+}
