@@ -39,9 +39,10 @@ html {
 }
 
 body {
-    overflow-x: hidden;
-    max-width: 1920px;
     margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -203,7 +204,7 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
-    margin-top: 10px;
+    margin-top: auto;
 }
 
 button {

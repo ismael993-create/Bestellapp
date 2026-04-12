@@ -1,3 +1,6 @@
+ let subtotal = 0;
+ let heroLiked = false;
+
 function toggleOrderbox() {
     if (window.innerWidth <= 1180) {
         document.getElementById("order_box").classList.toggle('close_box');
@@ -46,7 +49,6 @@ function addToBasket(title, price) {
     let basket = getBasket();
     let priceNumber = parseFloat(price.replace(",", ".").replace("€", ""));
     let existing = basket.find(item => item.title === title);
-
     if (existing) {
         existing.quantity++;
     } else {
@@ -56,7 +58,6 @@ function addToBasket(title, price) {
             quantity: 1 
         });
     }
-
     saveBasket(basket);
     renderBasket();
 
@@ -79,7 +80,6 @@ function renderBasket() {
     let basket = getBasket();
     let basketItems = document.getElementById("basket_items");
     basketItems.innerHTML = "";
-
     if (basket.length === 0) {
         basketItems.innerHTML = "<p class='empty_basket'>Warenkorb ist leer</p>";
         document.getElementById("subtotal_price").innerText = "0,00 €";
@@ -88,9 +88,6 @@ function renderBasket() {
         document.getElementById("buy_now_btn").innerText = "Buy now";
         return;
     }
-
-    let subtotal = 0;
-
     for (let item of basket) {
         subtotal += item.price * item.quantity;
         basketItems.innerHTML += `
@@ -109,6 +106,9 @@ function renderBasket() {
         `;
     }
 
+     let sidebar = document.getElementById("order_box");
+    sidebar.scrollTop = sidebar.scrollHeight;
+
     let delivery = subtotal >= 35 ? 0 : 4.99;
     let total = subtotal + delivery;
 
@@ -121,14 +121,12 @@ function renderBasket() {
 function changeQuantity(title, change) {
     let basket = getBasket();
     let item = basket.find(i => i.title === title);
-
     if (item) {
         item.quantity += change;
         if (item.quantity <= 0) {
             basket = basket.filter(i => i.title !== title);
         }
     }
-
     saveBasket(basket);
     renderBasket();
 }
@@ -153,7 +151,7 @@ window.addEventListener("scroll", checkWarenkorb);
 
 
 
-let heroLiked = false;
+
 
 function likeHero() {
     let btn = document.getElementById("hero-like-btn");

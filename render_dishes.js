@@ -1,116 +1,58 @@
 function init() {
-  renderdish1();
-  renderdish2();
-  renderdish3();
+  renderDish("dish1", burgers, "dish1.png", "Burger and Sandwiches");
+  renderDish("dish2", pizzas, "dish2.svg", "Pizza 30cm");
+  renderDish("dish3", salads, "dish3.png", "Salad");
   renderBasket();
   checkWarenkorb();
 }
 
-function renderdish1() {
-  let dishes = document.getElementById("dish1");
+function renderDish(section, items, mealImage, mealDescription) {
+  let dishes = document.getElementById(section);
   dishes.innerHTML = "";
 
   dishes.innerHTML += `
     <div class="dish_info">
-    <div class="media_query_dish_info">
-        <img src="./img/dish1.png" alt="Dish Image">
-        <p class="dish_description">Burger and Sandwiches</p>
-    </div>
-    </div>
-  `;
-
-  for (let i = 0; i < burgers.length; i++) {
-    dishes.innerHTML += `<div>
-      <div class="dish_content">
-          <img src="./img/${burgers[i].image}" alt="Dish Image">
-          <div class="dish_content_meal">
-              <div class="dish_content_meal_title_price">
-                  <h2>${burgers[i].title}</h2>
-                  <p class="price_font">${burgers[i].price}</p>
-              </div>
-              <div class="dish_buy_button">
-                  <p class="dish_meal_description">${burgers[i].description}</p>
-                  <button onclick="addToBasket('${burgers[i].title}', '${burgers[i].price}')">Add to basket</button>
-              </div>
-          </div>
+      <div class="media_query_dish_info">
+        <img src="./img/${mealImage}" alt="Dish Image">
+        <p class="dish_description">${mealDescription}</p>
       </div>
-    `;
-  }
-};
-
-
-function renderdish2() {
-  let dishes = document.getElementById("dish2");
-  dishes.innerHTML = "";
-
-  dishes.innerHTML += `
-    <div class="dish_info">
-    <div class="media_query_dish_info">
-       <img src="./img/dish2.svg" alt="Dish Image">
-        <p class="dish_description">Pizza 30cm</p>
     </div>
-     </div>
   `;
 
-  for (let j = 0; j < pizzas.length; j++) {
+  for (let i = 0; i < items.length; i++) {
     dishes.innerHTML += `
       <div class="dish_content">
-          <img src="./img/${pizzas[j].image}" alt="Dish Image">
-          <div class="dish_content_meal">
-              <div class="dish_content_meal_title_price">
-                  <h2>${pizzas[j].title}</h2>
-                  <p class="price_font">${pizzas[j].price}</p>
-              </div>
-              <div class="dish_buy_button">
-                  <p class="dish_meal_description">${pizzas[j].description}</p>
-                  <button onclick="addToBasket('${pizzas[j].title}', '${pizzas[j].price}')">Add to basket</button>
-              </div>
+        <img src="./img/${items[i].image}" alt="Dish Image">
+        <div class="dish_content_meal">
+          <div class="dish_content_meal_title_price">
+            <h2>${items[i].title}</h2>
+            <p class="price_font">${items[i].price}</p>
           </div>
+          <div class="dish_buy_button">
+            <p class="dish_meal_description">${items[i].description}</p>
+            <button onclick="addToBasket('${items[i].title}', '${items[i].price}')">Add to basket</button>
+          </div>
+        </div>
       </div>
     `;
   }
 }
 
-function renderdish3() {
-  let dishes = document.getElementById("dish3");
-  dishes.innerHTML = "";
-
-  dishes.innerHTML += `
-    <div class="dish_info">
-    <div class="media_query_dish_info">
-       <img src="./img/dish3.png" alt="Dish Image">
-        <p class="dish_description">Salad</p>
-    </div>
-     </div>
-  `;
-
-  for (let j = 0; j < salads.length; j++) {
-    dishes.innerHTML += `
-      <div class="dish_content">
-          <img src="./img/${salads[j].image}" alt="Dish Image">
-          <div class="dish_content_meal">
-              <div class="dish_content_meal_title_price">
-                  <h2>${salads[j].title}</h2>
-                  <p class="price_font">${salads[j].price}</p>
-              </div>
-              <div class="dish_buy_button">
-                  <p class="dish_meal_description">${salads[j].description}</p>
-                  <button onclick="addToBasket('${salads[j].title}', '${salads[j].price}')">Add to basket</button>
-              </div>
-          </div>
-      </div>
-    `;
-  }
-}
 
 //dialog Bestellung abgeschlossen
 
 
+function closeEmptyBasket() {
+    let dialog = document.getElementById("dialog_warenkorb");
+    dialog.close();
+}
+
 function deliveryFinished() {
-  if (getBasket().length === 0) {
-    alert("Dein Warenkorb ist leer! Bitte füge Artikel hinzu, bevor du fortfährst.");
-    return;
-  }
+    if (getBasket().length === 0) {
+        let dialog = document.getElementById("dialog_warenkorb");
+        dialog.showModal();
+        return;
+    }
     let dialog = document.getElementById("dialog_deliver");
     dialog.showModal();
     document.body.style.overflow = "hidden";

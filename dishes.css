@@ -135,12 +135,13 @@ h2 {
     }
 
     h2 {
-        font-size: 17px;
+        font-size: 20px;
         font-weight: 600;
     }
 .dish_content {
     width: 90%;  
     height: auto;
+    min-height: 400px;
     max-width: 350px;
     margin-left: auto;
     margin-right: auto;
@@ -155,7 +156,7 @@ h2 {
 
  .dish_content img {
     width: 100%;  
-    height: 200px;
+    height: 170px;
     object-fit: cover;
     border-radius: 0;
     padding: 0;
@@ -164,13 +165,13 @@ h2 {
 
     .dish_content_meal {
         width: 100%;
-        margin-top: 0;
+        margin-top: 0px;
         padding: 8px 10px;
     }
 
     .dish_meal_description {
         width: 100%;
-        font-size: 11px;
+        font-size: 16px;
     }
 
     .dish_content_meal_title_price {
