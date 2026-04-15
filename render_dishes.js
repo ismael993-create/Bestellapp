@@ -8,9 +8,7 @@ function init() {
 
 function renderDish(section, items, mealImage, mealDescription) {
   let dishes = document.getElementById(section);
-  dishes.innerHTML = "";
-
-  dishes.innerHTML += `
+  dishes.innerHTML = `
     <div class="dish_info">
       <div class="media_query_dish_info">
         <img src="./img/${mealImage}" alt="Dish Image">
@@ -39,7 +37,7 @@ function renderDish(section, items, mealImage, mealDescription) {
 }
 
 
-//dialog Bestellung abgeschlossen
+//dialog deliver access
 
 
 function closeEmptyBasket() {

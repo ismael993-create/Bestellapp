@@ -45,6 +45,11 @@ body {
     flex-direction: column;
 }
 
+body.freeze {
+    position: fixed;
+    width: 100%;
+}
+
 .header {
     background-color: #E76C1F;
     height: 128px;
@@ -146,7 +151,7 @@ h1 {
     background-color: rgb(211 161 120 / 90%);
     position: sticky;
     top: 0;
-    z-index: 1;
+    
 }
 
 .nav_dishes a {
