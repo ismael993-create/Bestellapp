@@ -48,9 +48,9 @@ function closeDialog() {
     unfreezeScroll();
 }
 function closeBasketposition() {
-    if (window.innerWidth <= 1180) {
+   
     document.getElementById("order_box").classList.add('close_box');
-    }
+    
 }
 
 function closeDialogAndReset() {
