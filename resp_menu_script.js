@@ -47,12 +47,18 @@ function closeDialog() {
     document.getElementById("dialog_deliver").close();
     unfreezeScroll();
 }
+function closeBasketposition() {
+    if (window.innerWidth <= 1180) {
+    document.getElementById("order_box").classList.add('close_box');
+    }
+}
 
 function closeDialogAndReset() {
     closeDialog();
     localStorage.removeItem("basket");
     closeBasket();
     renderBasket();
+    closeBasketposition();
 }
 
 function deliveryFinished() {
@@ -61,7 +67,7 @@ function deliveryFinished() {
         return;
     }
     document.getElementById("dialog_deliver").showModal();
-    freezeScroll();
+    if (window.innerWidth <= 1180) freezeScroll();
 }
 
 // storage funktionen
