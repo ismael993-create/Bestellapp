@@ -27,7 +27,7 @@ function openBasket() {
 
 function closeBasket() {
     document.getElementById("order_box").classList.add('close_box');
-    unfreezeScroll();
+     if (window.innerWidth <= 1180) unfreezeScroll();
 }
 
 function toggleOrderbox() {
