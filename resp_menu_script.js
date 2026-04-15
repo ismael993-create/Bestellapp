@@ -59,6 +59,7 @@ function closeDialogAndReset() {
     closeBasket();
     renderBasket();
     closeBasketposition();
+     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function deliveryFinished() {
